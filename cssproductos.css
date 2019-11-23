@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 100%;
+    text-align: center;
+    background: -webkit-repeating-linear-gradient(45deg,rgba(239,0,207,.8) 20px,rgba(205,3,131) 50px);
+
+}
+
+@font-face {
+    font-family: Nickainley;
+    src: url("Nickainley-Normal.woff2");
+}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 10;
+    animation: modal .2s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+.contenido{
+    margin:auto;
+    width: 40%;
+    height: 40%;
+    background: white;
+    border-radius: 10px;
+}
+
+#cerrar{
+    display: none;
+}
+
+#cerrar + label{
+    position: fixed;
+    color: #fff;
+    font-size: 25px;
+    z-index: 50;
+    background: darkred;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 10px;
+    cursor: pointer;
+    animation: modal 2s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modal{
+    display: none;
+    overflow-y: scroll;
+}
+
+@keyframes modal{
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+#content{
+    max-width: 100%;
+    height: auto;
+    padding: 0 10%;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.header{
+    text-align: center;
+    font-size: 70px;
+    font-family: Nickainley;
+    font-weight: bolder;
+}
+
+.contenedor{
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    margin: 5%;
+    -webkit-box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    border-top-left-radius: 50% 50%;
+  	border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    
+    
+}   
+
+
+
+.contenedor .info{
+    display: flex;
+	-webkit-box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 23px 1px rgba(0,0,0,0.75);
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 50% 50%;
+  	border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+	opacity: 1;
+}
